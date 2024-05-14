@@ -7,7 +7,7 @@ import (
 
 	componentbaseconfig "k8s.io/component-base/config"
 
-	policy "github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
+	policy "github.com/gocrane/crane-scheduler/apis/policy"
 
 	annotatorconfig "github.com/gocrane/crane-scheduler/pkg/controller/annotator/config"
 	prom "github.com/gocrane/crane-scheduler/pkg/controller/prometheus"

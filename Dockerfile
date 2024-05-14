@@ -1,15 +1,10 @@
-ARG PKGNAME
-
 # Build the manager binary
-FROM golang:1.17.2-alpine as builder
+FROM golang:1.19-alpine3.18 as builder
 
 ARG LDFLAGS
 ARG PKGNAME
 
 WORKDIR /go/src/github.com/gocrane/crane-scheduler
-
-# Add build deps
-RUN apk add build-base
 
 # Copy the Go Modules manifests
 COPY go.mod go.mod
@@ -20,12 +15,13 @@ RUN unset https_proxy HTTPS_PROXY HTTP_PROXY http_proxy && go mod download
 
 # Copy the go source
 COPY pkg pkg/
+COPY apis apis/
 COPY cmd cmd/
 
 # Build
-RUN go build -ldflags="${LDFLAGS}" -a -o ${PKGNAME} /go/src/github.com/gocrane/crane-scheduler/cmd/${PKGNAME}/main.go
+RUN CGO_ENABLED=0 go build -ldflags="${LDFLAGS}" -a -o ${PKGNAME} /go/src/github.com/gocrane/crane-scheduler/cmd/${PKGNAME}/main.go
 
-FROM alpine:3.13.5
+FROM alpine:3.18
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN unset https_proxy HTTPS_PROXY HTTP_PROXY http_proxy && apk add -U tzdata
 

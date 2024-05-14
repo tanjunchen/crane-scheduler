@@ -10,7 +10,7 @@ import (
 	"k8s.io/klog/v2"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
 
-	"github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
+	"github.com/gocrane/crane-scheduler/apis/policy"
 
 	"github.com/gocrane/crane-scheduler/pkg/utils"
 )

@@ -9,8 +9,8 @@ import (
 	"k8s.io/klog/v2"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
 
-	"github.com/gocrane/crane-scheduler/pkg/plugins/apis/config"
-	"github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
+	"github.com/gocrane/crane-scheduler/apis/config"
+	"github.com/gocrane/crane-scheduler/apis/policy"
 	"github.com/gocrane/crane-scheduler/pkg/utils"
 )
 
@@ -90,7 +90,7 @@ func (ds *DynamicScheduler) Score(ctx context.Context, state *framework.CycleSta
 
 	score = score - int(hotValue*10)
 
-	finalScore := utils.NormalizeScore(int64(score),framework.MaxNodeScore,framework.MinNodeScore)
+	finalScore := utils.NormalizeScore(int64(score), framework.MaxNodeScore, framework.MinNodeScore)
 
 	klog.V(4).Infof("[crane] Node[%s]'s final score is %d, while score is %d and hot value is %f", node.Name, finalScore, score, hotValue)
 

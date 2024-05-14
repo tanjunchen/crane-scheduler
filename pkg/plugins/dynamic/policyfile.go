@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
-	"github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy/scheme"
+	"github.com/gocrane/crane-scheduler/apis/policy"
+	"github.com/gocrane/crane-scheduler/apis/policy/scheme"
 )
 
 func LoadPolicyFromFile(file string) (*policy.DynamicSchedulerPolicy, error) {

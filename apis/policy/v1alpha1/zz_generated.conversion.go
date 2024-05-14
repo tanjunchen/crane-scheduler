@@ -8,7 +8,7 @@ package v1alpha1
 import (
 	unsafe "unsafe"
 
-	policy "github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
+	policy "github.com/gocrane/crane-scheduler/apis/policy"
 	conversion "k8s.io/apimachinery/pkg/conversion"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )

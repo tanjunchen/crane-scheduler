@@ -16,7 +16,7 @@ import (
 	listerv1alpha1 "github.com/gocrane/api/pkg/generated/listers/topology/v1alpha1"
 	topologyv1alpha1 "github.com/gocrane/api/topology/v1alpha1"
 
-	"github.com/gocrane/crane-scheduler/pkg/plugins/apis/config"
+	"github.com/gocrane/crane-scheduler/apis/config"
 )
 
 const (
