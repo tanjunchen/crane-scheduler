@@ -9,7 +9,7 @@ import (
 	"k8s.io/component-base/logs"
 	"k8s.io/kubernetes/cmd/kube-scheduler/app"
 
-	_ "github.com/gocrane/crane-scheduler/pkg/plugins/apis/config/scheme"
+	_ "github.com/gocrane/crane-scheduler/apis/config/scheme"
 
 	"github.com/gocrane/crane-scheduler/pkg/plugins/dynamic"
 	"github.com/gocrane/crane-scheduler/pkg/plugins/noderesourcetopology"

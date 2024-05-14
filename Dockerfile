@@ -1,10 +1,8 @@
+ARG LDFLAGS
 ARG PKGNAME
 
 # Build the manager binary
-FROM golang:1.17.2-alpine as builder
-
-ARG LDFLAGS
-ARG PKGNAME
+FROM golang:1.19 as builder
 
 WORKDIR /go/src/github.com/gocrane/crane-scheduler
 
@@ -20,6 +18,7 @@ RUN unset https_proxy HTTPS_PROXY HTTP_PROXY http_proxy && go mod download
 
 # Copy the go source
 COPY pkg pkg/
+COPY apis pkg/
 COPY cmd cmd/
 
 # Build

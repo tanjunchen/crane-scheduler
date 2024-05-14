@@ -8,7 +8,7 @@ package v1beta3
 import (
 	unsafe "unsafe"
 
-	config "github.com/gocrane/crane-scheduler/pkg/plugins/apis/config"
+	config "github.com/gocrane/crane-scheduler/apis/config"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	conversion "k8s.io/apimachinery/pkg/conversion"
 	runtime "k8s.io/apimachinery/pkg/runtime"

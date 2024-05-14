@@ -7,7 +7,6 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/framework"
 
 	topologyv1alpha1 "github.com/gocrane/api/topology/v1alpha1"
-
 	"github.com/gocrane/crane-scheduler/pkg/utils"
 )
 
@@ -17,11 +16,7 @@ const (
 )
 
 // PreFilter invoked at the prefilter extension point.
-func (tm *TopologyMatch) PreFilter(
-	ctx context.Context,
-	state *framework.CycleState,
-	pod *corev1.Pod,
-) *framework.Status {
+func (tm *TopologyMatch) PreFilter(ctx context.Context, state *framework.CycleState, pod *corev1.Pod) (*framework.PreFilterResult, *framework.Status) {
 	var indices []int
 	if tm.topologyAwareResources.Has(string(corev1.ResourceCPU)) {
 		indices = GetPodTargetContainerIndices(pod)
@@ -33,7 +28,7 @@ func (tm *TopologyMatch) PreFilter(
 		targetContainerResource: resources,
 		podTopologyByNode:       make(map[string]*nodeWrapper),
 	})
-	return nil
+	return nil, framework.NewStatus(framework.Success, "")
 }
 
 // PreFilterExtensions returns prefilter extensions, pod add and remove.

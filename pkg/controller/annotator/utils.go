@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	policy "github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
+	policy "github.com/gocrane/crane-scheduler/apis/policy"
 )
 
 func splitMetaKeyWithMetricName(key string) (string, string, error) {

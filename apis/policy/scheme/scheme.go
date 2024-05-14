@@ -1,8 +1,8 @@
 package scheme
 
 import (
-	dynamicpolicy "github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
-	dynamicpolicyv1alpha1 "github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy/v1alpha1"
+	dynamicpolicy "github.com/gocrane/crane-scheduler/apis/policy"
+	dynamicpolicyv1alpha1 "github.com/gocrane/crane-scheduler/apis/policy/v1alpha1"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/serializer"

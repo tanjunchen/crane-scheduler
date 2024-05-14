@@ -12,7 +12,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/klog/v2"
 
-	policy "github.com/gocrane/crane-scheduler/pkg/plugins/apis/policy"
+	policy "github.com/gocrane/crane-scheduler/apis/policy"
 
 	prom "github.com/gocrane/crane-scheduler/pkg/controller/prometheus"
 )
